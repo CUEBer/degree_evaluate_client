@@ -1,0 +1,26 @@
+<div class="container">
+  <h4>学位点名称：{{ basics?.name }}</h4>
+  <h4>所在学院: {{ basics?.schoolName }}</h4>
+  <form class="form-signin form-group ">
+    <div class="checkbox">
+      <label>
+            <input type="checkbox"  [(ngModel)]="basics.keyDiscipline" [ngModelOptions]="{standalone: true}">是否重点建设学科
+       </label>
+      <div *ngIf="basics.keyDiscipline">
+        <label for="userid">批准时间</label>
+        <input type="date" [(ngModel)]="basics.keyDate"  [ngModelOptions]="{standalone: true}" >
+      </div>
+
+      <label>
+                <input type="checkbox" [(ngModel)]="basics.master"  [ngModelOptions]="{standalone: true}">硕士
+      </label>
+      <label>
+          <input type="checkbox" [(ngModel)]="basics.doctor"  [ngModelOptions]="{standalone: true}">博士
+      </label>
+    </div>
+    <button class="btn btn-lg btn-primary btn-block" type="submit" (click)="update()">提交修改</button>
+    <div class="alert alert-danger" role="alert" *ngIf="message">
+      {{ message }}
+    </div>
+  </form>
+</div>
