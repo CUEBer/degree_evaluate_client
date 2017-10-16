@@ -1,10 +1,10 @@
 <div *ngIf="!authService.isLoggedIn()" class="container">
   <form class="form-signin form-group">
     <h2 class="form-signin-heading">请登录</h2>
-    <label for="inputEmail" class="sr-only">Email address</label>
-    <input type="userid" class="form-control" placeholder="用户名" required autofocus #username>
+    <label for="inputUserName">username</label>
+    <input id="inputUserName" type="userid" class="form-control" placeholder="用户名" required autofocus #username>
     <label for="inputPassword" class="sr-only">Password</label>
-    <input type="password" class="form-control" placeholder="口令" required #password>
+    <input id="inputPassword" type="password" class="form-control" placeholder="口令" required #password>
     <button class="btn btn-lg btn-primary btn-block" type="submit" (click)="login(username.value, password.value)">登录</button>
     <div class="alert alert-danger" role="alert" *ngIf="authService.message">
       {{ authService.message }}
