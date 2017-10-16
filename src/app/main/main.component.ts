@@ -20,8 +20,15 @@ export class MainComponent implements OnInit {
   constructor(public authService: AuthService, public router: Router) {
   }
   ngOnInit() {
+    if(this.userId==null){
+      this.userId=localStorage.getItem("userId");
+    }
     this.authService.getResource<Account>('http://localhost:8080/account/' + this.userId).subscribe(
-      data => { this.account = data; localStorage.setItem('discipline_id', this.account.disciplineId + ''); },
+      data => { 
+          this.account = data; 
+          localStorage.setItem('discipline_id', this.account.disciplineId + ''); 
+          localStorage.setItem('userId', this.userId + ''); 
+      },
       err => {
         console.log(err);
         if (err.status === 401) {
@@ -32,6 +39,7 @@ export class MainComponent implements OnInit {
 
       }
     );
+    
   }
   logout(): boolean {
     this.authService.logout();
