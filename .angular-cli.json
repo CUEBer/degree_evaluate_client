@@ -20,9 +20,10 @@
       "prefix": "app",
       "styles": [
         "../node_modules/bootstrap/dist/css/bootstrap.min.css",
-        "styles.css"
+        "css/style.css",
+        "css/bootstrap-responsive.css"
       ],
-      "scripts": [ 
+      "scripts": [
         "../node_modules/jquery/dist/jquery.min.js",
         "../node_modules/bootstrap/dist/js/bootstrap.min.js"
       ],

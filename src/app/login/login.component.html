@@ -1,5 +1,5 @@
 <div *ngIf="!authService.isLoggedIn()" class="container">
-  <form class="form-signin form-group">
+  <!-- <form class="form-signin form-group">
     <h2 class="form-signin-heading">请登录</h2>
     <label for="inputUserName">username</label>
     <input id="inputUserName" type="userid" class="form-control" placeholder="用户名" required autofocus #username>
@@ -9,9 +9,48 @@
     <div class="alert alert-danger" role="alert" *ngIf="authService.message">
       {{ authService.message }}
     </div>
-  </form>
+  </form> -->
+
+  <div class="container-fluid-full">
+    <div class="row-fluid">
+      <div class="row-fluid">
+        <div class="login-box">
+          <h2>首都经济贸易大学学科授权点评估系统</h2>
+          <h2>登录你的账号</h2>
+          <form class="form-horizontal">
+
+            <fieldset>
+
+              <div class="input-prepend" title="Username">
+                <span class="add-on"><i class="halflings-icon user"></i></span>
+                <input class="input-large span10" name="username" id="username" type="userid" placeholder="输入用户" required autofocus #username>
+              </div>
+              <div class="clearfix"></div>
+
+              <div class="input-prepend" title="password">
+                <span class="add-on"><i class="halflings-icon lock"></i></span>
+                <input class="input-large span10" name="password" id="password" type="password" placeholder="输入密码" required #password>
+              </div>
+              <div class="clearfix"></div>
+
+              <div class="button-login">
+                <button type="submit" class="btn btn-primary" (click)="login(username.value, password.value)">登录</button>
+              </div>
+              <div class="clearfix"></div>
+            </fieldset>
+
+          </form>
+          <hr>
+        </div><!--/span-->
+      </div><!--/row-->
+
+
+    </div><!--/.fluid-container-->
+
+  </div><!--/fluid-row-->
 </div>
+
 <!-- /container -->
 <div *ngIf="authService.isLoggedIn()" class="container">
-<app-main [userId]="authService.userId"></app-main>
+  <app-main [userId]="authService.userId"></app-main>
 </div>
