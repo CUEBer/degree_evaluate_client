@@ -7,8 +7,8 @@
             <input type="checkbox"  [(ngModel)]="basics.keyDiscipline" [ngModelOptions]="{standalone: true}">是否重点建设学科
        </label>
       <div *ngIf="basics.keyDiscipline">
-        <label for="userid">批准时间</label>
-        <input type="date" [(ngModel)]="basics.keyDate"  [ngModelOptions]="{standalone: true}" >
+        <label for="proveDate">批准时间</label>
+        <input ID="proveDate" type="date" [(ngModel)]="basics.keyDate"  [ngModelOptions]="{standalone: true}" >
       </div>
 
       <label>
