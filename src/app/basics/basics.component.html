@@ -6,14 +6,16 @@
       <label>
             <input type="checkbox"  [(ngModel)]="basics.keyDiscipline" [ngModelOptions]="{standalone: true}">是否重点建设学科
        </label>
+      <br>
       <div *ngIf="basics.keyDiscipline">
         <label for="proveDate">批准时间</label>
         <input ID="proveDate" type="date" [(ngModel)]="basics.keyDate"  [ngModelOptions]="{standalone: true}" >
       </div>
 
       <label>
-                <input type="checkbox" [(ngModel)]="basics.master"  [ngModelOptions]="{standalone: true}">硕士
+          <input type="checkbox" [(ngModel)]="basics.master"  [ngModelOptions]="{standalone: true}">硕士
       </label>
+      <br>
       <label>
           <input type="checkbox" [(ngModel)]="basics.doctor"  [ngModelOptions]="{standalone: true}">博士
       </label>
