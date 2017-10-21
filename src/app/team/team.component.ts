@@ -4,7 +4,13 @@ import {AuthService} from "../auth.service";
 
 class Team {
   id: Number;
-  name: String;
+  duty: String;
+  totalnumber: String ;
+  under35 : String ;
+  between36to45 : String ;
+  between46to55 : String ;
+  between56to60 : String ;
+  above61 : String ;
 }
 
 @Component({
@@ -22,7 +28,7 @@ export class TeamComponent implements OnInit {
     if (this.userId == null){
       this.userId = localStorage.getItem('userId');
     }
-    this.authService.getResource<Team>('http://localhost:8080/school/query').subscribe(
+    this.authService.getResource<Team>('http://localhost:8080/structure/query/1').subscribe(
       data => {
         this.team = data;
       },
