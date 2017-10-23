@@ -5,7 +5,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 class Account {
   id: String;
   name: String;
-  schollName: String;
+  schoolName: String;
   disciplineName: String;
   disciplineId: Number;
 }
