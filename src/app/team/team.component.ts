@@ -19,16 +19,12 @@ class Team {
   styleUrls: ['./team.component.css']
 })
 export class TeamComponent implements OnInit {
-  @Input() userId: String;
   team: Team;
   constructor(public authService: AuthService, public router: Router) {
   }
 
   ngOnInit() {
-    if (this.userId == null){
-      this.userId = localStorage.getItem('userId');
-    }
-    this.authService.getResource<Team>('http://localhost:8080/structure/query/1').subscribe(
+    this.authService.getResource<Team>('http://localhost:8080/structure/query/'+ localStorage.getItem('discipline_id')).subscribe(
       data => {
         this.team = data;
       },
