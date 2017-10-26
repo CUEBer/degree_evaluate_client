@@ -9,13 +9,17 @@ import { TeamComponent } from './team/team.component';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SchoolComponent } from './school/school.component';
+import { HeaderComponent } from './header/header.component';
+import { SubjectComponent } from './subject/subject.component';
 @NgModule({
   declarations: [
     LoginComponent,
     MainComponent,
     BasicsComponent,
     TeamComponent,
-    SchoolComponent
+    SchoolComponent,
+    HeaderComponent,
+    SubjectComponent
   ],
   imports: [
     HttpModule,

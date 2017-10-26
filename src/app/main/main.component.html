@@ -1,52 +1,177 @@
-<div  class="container-fluid h-100">
-    <h2>学科自评估系统</h2>
-    <p>用户名 <b>{{ account?.name }}</b> {{ account?.schoolName }} - {{ account?.disciplineName }}</p>
-    <a href (click)="logout()">退出</a>
-    <div class="row h-100">
-        <div class="col-2 collapse d-md-flex bg-faded pt-2 h-100" id="sidebar">
-            <ul class="nav flex-column">
-                <li class="nav-item"><a class="nav-link" routerLink="/basics" >学位点基本情况</a></li>
-                <li class="nav-item"><a class="nav-link" routerLink="/team" >学科队伍</a></li>
-                <li class="nav-item"><a class="nav-link" routerLink="/school" >学院</a></li>
-                <li class="nav-item">
-                    <a class="nav-link collapsed" href="#submenu1" data-toggle="collapse" data-target="#submenu1">Reports</a>
-                    <div class="collapse" id="submenu1" aria-expanded="false">
-                        <ul class="flex-column pl-2 nav">
-                            <li class="nav-item"><a class="nav-link py-0" href="">Orders</a></li>
-                            <li class="nav-item">
-                                <a class="nav-link collapsed py-0" href="#submenu1sub1" data-toggle="collapse" data-target="#submenu1sub1">Customers</a>
-                                <div class="collapse small" id="submenu1sub1" aria-expanded="false">
-                                    <ul class="flex-column nav pl-4">
-                                        <li class="nav-item">
-                                            <a class="nav-link p-0" href="">
-                                                    <i class="fa fa-fw fa-clock-o"></i> Daily
-                                                </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link p-0" href="">
-                                                    <i class="fa fa-fw fa-dashboard"></i> Dashboard
-                                                </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link p-0" href="">
-                                                    <i class="fa fa-fw fa-bar-chart"></i> Charts
-                                                </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link p-0" href="">
-                                                    <i class="fa fa-fw fa-compass"></i> Areas
-                                                </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="nav-item"><a class="nav-link" href="#">Analytics</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Export</a></li>
-            </ul>
-        </div>
-        <router-outlet></router-outlet>
-    </div>
+
+<app-header></app-header>
+
+<div id="sidebar-left" class="span2">
+  <div class="nav-collapse sidebar-nav">
+    <ul class="nav nav-tabs nav-stacked main-menu">
+      <li>
+        <a href="subject.html">
+          <i class="icon-bar-chart"></i>
+          <span class="hidden-tablet">学位点基本情况</span>
+        </a>
+      </li>
+      <li>
+        <a class="dropmenu" href="#">
+          <i class="icon-dashboard"></i>
+          <span class="hidden-tablet">学术队伍</span>
+        </a>
+        <ul>
+          <li>
+            <a class="submenu" href="academic_team.html">
+              <i class="icon-file-alt"></i>
+              <span class="hidden-tablet">现有在编人员结构</span>
+            </a>
+          </li>
+          <li>
+            <a class="submenu" href="direction.html">
+              <i class="icon-file-alt"></i>
+              <span class="hidden-tablet">培养方向及其学术带头人、主要学术骨干</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a class="dropmenu" href="#">
+          <i class="icon-eye-open"></i>
+          <span class="hidden-tablet">培养方向</span>
+        </a>
+        <ul>
+          <li>
+            <a class="submenu" href="development_direction.html">
+              <i class="icon-file-alt"></i>
+              <span class="hidden-tablet">名称及特色</span>
+            </a>
+          </li>
+          <li>
+            <a class="submenu" href="academic_master_list.html">
+              <i class="icon-file-alt"></i>
+              <span class="hidden-tablet">学术带头人简况</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a class="dropmenu" href="#">
+          <i class="icon-edit"></i>
+          <span class="hidden-tablet">科研情况</span>
+
+        </a>
+        <ul>
+          <li>
+            <a class="submenu" href="essay_list.html">
+              <i class="icon-file-alt"></i>
+              <span class="hidden-tablet">代表性论文</span>
+            </a>
+          </li>
+          <li>
+            <a class="submenu" href="book_list.html">
+              <i class="icon-file-alt"></i>
+              <span class="hidden-tablet">代表性出版专著、教材清单</span>
+            </a>
+          </li>
+          <li>
+            <a class="submenu" href="subject_list.html">
+              <i class="icon-file-alt"></i>
+              <span class="hidden-tablet">代表性纵向科研项目清单</span>
+            </a>
+          </li>
+          <li>
+            <a class="submenu" href="transverse_subject.html">
+              <i class="icon-file-alt"></i>
+              <span class="hidden-tablet">代表性横向科研项目清单</span>
+            </a>
+          </li>
+          <li>
+            <a class="submenu" href="reward_list.html">
+              <i class="icon-file-alt"></i>
+              <span class="hidden-tablet">科研获奖清单</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a class="dropmenu" href="#">
+          <i class="icon-folder-close-alt"></i>
+          <span class="hidden-tablet">教学与人才培养</span>
+        </a>
+        <ul>
+          <li>
+            <a class="submenu" href="recruit_student.html">
+              <i class="icon-file-alt"></i>
+              <span class="hidden-tablet">招生情况</span>
+            </a>
+          </li>
+          <li>
+            <a class="submenu" href="course_install.html">
+              <i class="icon-file-alt"></i>
+              <span class="hidden-tablet">研究生学位课程设置情况</span>
+            </a>
+          </li>
+          <li>
+            <a class="submenu" href="textbook.html">
+              <i class="icon-file-alt"></i>
+              <span class="hidden-tablet">研究生教材建设</span>
+            </a>
+          </li>
+          <li>
+            <a class="submenu" href="report_situation.html">
+              <i class="icon-file-alt"></i>
+              <span class="hidden-tablet">2013-2017年面向研究生举办的学术讲座/报告情况</span>
+            </a>
+          </li>
+          <li>
+            <a class="submenu" href="teach_result.html">
+              <i class="icon-file-alt"></i>
+              <span class="hidden-tablet">2013年1月至2017年11月获省部级以上优秀教学成果、教材奖情况</span>
+            </a>
+          </li>
+          <li>
+            <a class="submenu" href="student_result.html">
+              <i class="icon-file-alt"></i>
+              <span class="hidden-tablet">2013年1月至2017年11月研究生在学期间代表性学术成果</span>
+            </a>
+          </li>
+          <li>
+            <a class="submenu" href="guide_list.html">
+              <i class="icon-file-alt"></i>
+              <span class="hidden-tablet">导师指导情况</span>
+            </a>
+          </li>
+          <li>
+            <a class="submenu" href="practice_list.html">
+              <i class="icon-file-alt"></i>
+              <span class="hidden-tablet">近五年研究学术训练/实践教学情况</span>
+            </a>
+          </li>
+          <li>
+            <a class="submenu" href="international_list.html">
+              <i class="icon-file-alt"></i>
+              <span class="hidden-tablet">本学位点2013年1月至2017年11月举办的主要国际国内学术会议</span>
+            </a>
+          </li>
+          <li>
+            <a class="submenu" href="international_report.html">
+              <i class="icon-file-alt"></i>
+              <span class="hidden-tablet">本学位点2013年1月至2017年11月教师（或研究生）在国内外讲学或参加国际、国内会议及做报告、提交论文情况</span>
+            </a>
+          </li>
+          <li>
+            <a class="submenu" href="international_cooperation.html">
+              <i class="icon-file-alt"></i>
+              <span class="hidden-tablet">本学位点2013年1月至2017年11月承担的国际交流合作项目</span>
+            </a>
+          </li>
+          <li>
+            <a class="submenu" href="working_situation.html">
+              <i class="icon-file-alt"></i>
+              <span class="hidden-tablet">研究生就业情况</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+
+    </ul>
+  </div>
 </div>
+
+<app-subject></app-subject>
