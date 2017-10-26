@@ -11,6 +11,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SchoolComponent } from './school/school.component';
 import { HeaderComponent } from './header/header.component';
 import { SubjectComponent } from './subject/subject.component';
+import { LeftComponent } from './left/left.component';
 @NgModule({
   declarations: [
     LoginComponent,
@@ -19,7 +20,8 @@ import { SubjectComponent } from './subject/subject.component';
     TeamComponent,
     SchoolComponent,
     HeaderComponent,
-    SubjectComponent
+    SubjectComponent,
+    LeftComponent
   ],
   imports: [
     HttpModule,
