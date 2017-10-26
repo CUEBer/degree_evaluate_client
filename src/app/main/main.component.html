@@ -1,52 +1,6 @@
-<div  class="container-fluid h-100">
-    <h2>学科自评估系统</h2>
-    <p>用户名 <b>{{ account?.name }}</b> {{ account?.schoolName }} - {{ account?.disciplineName }}</p>
-    <a href (click)="logout()">退出</a>
-    <div class="row h-100">
-        <div class="col-2 collapse d-md-flex bg-faded pt-2 h-100" id="sidebar">
-            <ul class="nav flex-column">
-                <li class="nav-item"><a class="nav-link" routerLink="/basics" >学位点基本情况</a></li>
-                <li class="nav-item"><a class="nav-link" routerLink="/team" >学科队伍</a></li>
-                <li class="nav-item"><a class="nav-link" routerLink="/school" >学院</a></li>
-                <li class="nav-item">
-                    <a class="nav-link collapsed" href="#submenu1" data-toggle="collapse" data-target="#submenu1">Reports</a>
-                    <div class="collapse" id="submenu1" aria-expanded="false">
-                        <ul class="flex-column pl-2 nav">
-                            <li class="nav-item"><a class="nav-link py-0" href="">Orders</a></li>
-                            <li class="nav-item">
-                                <a class="nav-link collapsed py-0" href="#submenu1sub1" data-toggle="collapse" data-target="#submenu1sub1">Customers</a>
-                                <div class="collapse small" id="submenu1sub1" aria-expanded="false">
-                                    <ul class="flex-column nav pl-4">
-                                        <li class="nav-item">
-                                            <a class="nav-link p-0" href="">
-                                                    <i class="fa fa-fw fa-clock-o"></i> Daily
-                                                </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link p-0" href="">
-                                                    <i class="fa fa-fw fa-dashboard"></i> Dashboard
-                                                </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link p-0" href="">
-                                                    <i class="fa fa-fw fa-bar-chart"></i> Charts
-                                                </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link p-0" href="">
-                                                    <i class="fa fa-fw fa-compass"></i> Areas
-                                                </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="nav-item"><a class="nav-link" href="#">Analytics</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Export</a></li>
-            </ul>
-        </div>
-        <router-outlet></router-outlet>
-    </div>
-</div>
+
+<app-header></app-header>
+
+<app-left></app-left>
+
+<app-subject></app-subject>
