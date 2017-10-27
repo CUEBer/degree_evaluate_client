@@ -27,54 +27,65 @@
         <form class="form-horizontal">
           <fieldset>
             <div class="control-group">
-              <label class="control-label" for="focusedInput">学位点名称（代码）</label>
+              <label class="control-label">学位点名称（代码）</label>
               <div class="controls">
-                <input class="input-xlarge focused" id="focusedInput" type="text" value="">
+                {{ basics?.name }}
               </div>
             </div>
             <div class="control-group">
-              <label class="control-label" for="focusedInput">所在学院</label>
+              <label class="control-label">所在学院</label>
               <div class="controls">
-                <input class="input-xlarge focused" id="focusedInput" type="text" value="">
+                {{ basics?.schoolName }}
               </div>
             </div>
 
             <div class="control-group">
-              <label class="control-label" for="selectError3">是否重点学科</label>
-              <div class="controls">
-                <select id="selectError3">
-                  <option>请选择</option>
-                  <option>是</option>
-                  <option>否</option>
-                </select>
+              <label class="control-label">是否重点建设学科<input type="checkbox" [(ngModel)]="basics.keyDiscipline"
+                                                          [ngModelOptions]="{standalone: true}"></label>
+              <!-- <div class="controls">
+                 <select id="selectError3">
+                   <option>请选择</option>
+                   <option>请选择</option>
+                   <option>是</option>
+                   <option>否</option>
+                 </select>
+               </div>-->
+            </div>
+            <div *ngIf="basics.keyDiscipline">
+              <div class="control-group">
+                <label class="control-label" for="proveDate">重点学科批准时间</label>
+                <div class="controls">
+                  <input ID="proveDate" type="date" [(ngModel)]="basics.keyDate" [ngModelOptions]="{standalone: true}">
+                </div>
               </div>
             </div>
             <div class="control-group">
-              <label class="control-label" for="focusedInput">重点学科批准时间</label>
+              <label class="control-label">授予学位层次</label>
               <div class="controls">
-                <input class="input-xlarge focused" id="focusedInput" type="text" value="">
-              </div>
-            </div>
-            <div class="control-group">
-              <label class="control-label" for="selectError3">授予学位层次</label>
-              <div class="controls">
-                <select id="selectError3">
+                <!--<select id="selectError3">
                   <option>请选择</option>
                   <option>硕士</option>
                   <option>博士</option>
                   <option>硕、博士</option>
-                </select>
+                </select>-->
+                <label>
+                  <input type="checkbox" [(ngModel)]="basics.master" [ngModelOptions]="{standalone: true}">硕士
+                </label>
+                <label>
+                  <input type="checkbox" [(ngModel)]="basics.doctor" [ngModelOptions]="{standalone: true}">博士
+                </label>
               </div>
             </div>
             <div class="form-actions">
-              <button type="submit" class="btn btn-primary">保存</button>
+              <button type="submit" class="btn btn-primary" (click)="update()">保存</button>
               <button class="btn">取消</button>
             </div>
-            </fieldset>
-          </form >
-        </div>
-
-
-</div>
+            <div class="alert alert-danger" role="alert" *ngIf="message">
+              {{ message }}
+            </div>
+          </fieldset>
+        </form>
+      </div>
     </div>
   </div>
+</div>
