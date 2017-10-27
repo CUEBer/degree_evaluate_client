@@ -4,3 +4,17 @@
   {{ school?.id }}
   {{ school?.name }}
 </p>
+
+<form class="form-signin form-group ">
+  <div class="checkbox">
+    <label>
+     <input type="hidden"  [(ngModel)]="school.id" [ngModelOptions]="{standalone: true}">
+      学院名称:<input type="text"  [(ngModel)]="school.name" [ngModelOptions]="{standalone: true}">
+    </label>
+    <br>
+  </div>
+  <button class="btn btn-lg btn-primary btn-block" type="submit" (click)="save()">保存</button>
+  <div class="alert alert-danger" role="alert" *ngIf="message">
+    {{ message }}
+  </div>
+</form>

@@ -5,6 +5,8 @@ import {Router} from "@angular/router";
 class School {
   id: Number;
   name: String;
+  constructor() {
+  }
 }
 
 
@@ -15,10 +17,11 @@ class School {
 })
 export class SchoolComponent implements OnInit {
   school: School;
+  message:String;
   constructor(public authService: AuthService, public router: Router) { }
 
   ngOnInit() {
-    this.authService.getResource<School>('http://localhost:8080/school/query/'+ localStorage.getItem('discipline_id')).subscribe(
+    this.authService.getResource<School>('http://localhost:8080/school/query/1').subscribe(
       data => {
         this.school = data;
       },
@@ -31,6 +34,21 @@ export class SchoolComponent implements OnInit {
         }
       }
     );
+  }
+
+  save(): boolean {
+    //alert(JSON.stringify(this.school));
+    console.log('to save: ' + JSON.stringify(this.school));
+    this.authService.postResource<School>('http://localhost:8080/school/save',
+      this.school).subscribe(
+      data => {
+        this.message=data.toString();
+        },
+      err => {
+        this.message=err.toString();
+      }
+    );
+    return false;
   }
 
 }
